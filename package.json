@@ -1,0 +1,20 @@
+{
+  "name": "materialesxaixo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Sitio web estático de XAIXO Materiales de Construcción (materialesxaixo.com)",
+  "scripts": {
+    "generate:pages": "node scripts/generate-pages.mjs",
+    "generate:assets": "node scripts/generate-assets.mjs",
+    "predev": "npm run generate:pages",
+    "dev": "vite",
+    "prebuild": "npm run generate:pages",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "vite": "^5.4.10"
+  }
+}

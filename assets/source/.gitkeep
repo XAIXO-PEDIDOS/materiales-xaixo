@@ -1,0 +1,2 @@
+Coloca aquí las fotos originales (obra, almacén, Xaixo Plack, equipo, etc.).
+Ejecuta "npm run generate:assets" para generar las variantes WebP en public/img/.

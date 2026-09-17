@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Páginas HTML generadas por scripts/generate-pages.mjs (raíz del proyecto)
+/*.html
+
+# Imágenes generadas por scripts/generate-assets.mjs
+/public/img/
+/public/sitemap.xml
+/public/robots.txt

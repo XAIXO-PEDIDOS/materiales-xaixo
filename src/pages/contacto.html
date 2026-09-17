@@ -1,0 +1,55 @@
+<main>
+<div class="wrap page-hero">
+  <span class="tag">CONTACTO</span>
+  <h1>Pide presupuesto.</h1>
+  <p>Cuéntanos qué necesitas y te respondemos con precio y disponibilidad. Lo más rápido es WhatsApp; si prefieres, usa el formulario o el email.</p>
+</div>
+
+<div class="wrap"><section>
+  <div class="contacto-grid">
+
+    <form class="card" name="contacto" method="POST" data-netlify="true" netlify-honeypot="empresa-web">
+      <input type="hidden" name="form-name" value="contacto">
+      <p class="hp"><label>No rellenar: <input name="empresa-web"></label></p>
+
+      <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" required autocomplete="name">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+      </div>
+      <div>
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+      </div>
+      <div>
+        <label for="mensaje">¿Qué necesitas?</label>
+        <textarea id="mensaje" name="mensaje" required placeholder="Material, cantidades aproximadas y plazo de obra"></textarea>
+      </div>
+      <label style="font-weight:400;font-size:13px;color:var(--ink-2);display:flex;gap:8px;align-items:flex-start">
+        <input type="checkbox" name="privacidad" required style="width:auto;margin-top:3px">
+        He leído y acepto la <a href="/politica-privacidad.html" style="text-decoration:underline">política de privacidad</a>.
+      </label>
+      <button class="btn p enviar" type="submit">Enviar mensaje</button>
+      <p class="form-status" role="status" hidden></p>
+    </form>
+
+    <div>
+      <div class="datos contacto-list">
+        <div><b>WhatsApp</b><span><a href="https://wa.me/34689248559" target="_blank" rel="noopener" style="text-decoration:underline">689 248 559</a> — la vía más rápida</span></div>
+        <div><b>Email</b><span><a href="mailto:javierxaixo@gmail.com" style="text-decoration:underline">javierxaixo@gmail.com</a></span></div>
+        <div><b>Teléfono</b><span><!-- TODO: teléfono fijo pendiente de alta -->Próximamente</span></div>
+        <div><b>Dirección</b><span>Gran Via del Castell de Bairen, 20<br>46701 Gandia, Valencia</span></div>
+        <div><b>Horario</b><span><!-- TODO: confirmar horario de atención -->TODO: horario de atención</span></div>
+      </div>
+      <div class="mapa" style="margin-top:24px;aspect-ratio:4/3">
+        <iframe title="Mapa del almacén XAIXO en Gandia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Gran%20Via%20del%20Castell%20de%20Bairen%2020%2C%2046701%20Gandia%2C%20Valencia&output=embed"></iframe>
+      </div>
+    </div>
+
+  </div>
+</section></div>
+</main>
