@@ -17,8 +17,11 @@ export const site = {
   whatsapp: '689248559', // formato local, sin espacios
   whatsappDisplay: '689 248 559',
   whatsappIntl: '34689248559',
-  phone: null, // TODO: teléfono fijo pendiente de contratar/confirmar
+  phone: '615439842', // formato local, sin espacios
+  phoneDisplay: '615 439 842',
+  phoneTel: '+34615439842',
   schedule: 'Lunes a viernes, 7:00 – 19:00',
+  scheduleClosed: 'Sábados cerrado',
   xaixoHomeUrl: 'https://www.xaixohome.com',
 };
 
@@ -45,7 +48,7 @@ export const pages = [
     path: '/',
     contentFile: 'index.html',
     title: 'Materiales de construcción en Gandia | XAIXO',
-    description: 'Almacén de materiales de construcción en Gandia: obra y cemento, tabiquería, cubiertas, pavimentos, ferretería y pintura. Entrega coordinada a pie de obra en toda la Comunidad Valenciana.',
+    description: 'Almacén de materiales de construcción en Gandia: obra y cemento, tabiquería, cubiertas, pavimentos, ferretería y pintura. Entrega a pie de obra en toda la Comunidad Valenciana y a toda España en obras grandes.',
     nav: 'Inicio',
     navOrder: 0,
     showInNav: false,
@@ -75,7 +78,7 @@ export const pages = [
     path: '/servicios.html',
     contentFile: 'servicios.html',
     title: 'Servicios para constructoras y profesionales | XAIXO Gandia',
-    description: 'Entrega a pie de obra, tráiler directo a fábrica, cuenta de cliente y asesoramiento técnico. Servicios de XAIXO para constructoras, promotoras y autónomos en toda la Comunidad Valenciana.',
+    description: 'Entrega a pie de obra con camiones propios en toda la Comunidad Valenciana, suministro a toda España en obras grandes, cuenta de cliente y asesoramiento técnico para constructoras y autónomos.',
     nav: 'Servicios',
     navOrder: 3,
     showInNav: true,

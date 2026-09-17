@@ -35,7 +35,7 @@ function renderHeader(activePath) {
     })
     .join('');
 
-  // TODO: cuando haya teléfono fijo, sustituir este CTA por <a class="tel" href="tel:+34...">.
+  const telLink = `tel:${site.phoneTel}`;
   return `<header>
   <div class="head">
     <a class="brand" href="/"><img class="logo" src="/logo.png" alt="XAIXO Materiales de Construcción"></a>
@@ -43,21 +43,22 @@ function renderHeader(activePath) {
       <span></span><span></span><span></span>
     </button>
     <nav id="menu-principal">${links}</nav>
-    <a class="tel" href="/contacto.html">Pide presupuesto</a>
+    <a class="tel" href="${telLink}">${site.phoneDisplay}</a>
   </div>
-  <nav id="menu-movil" class="movil">${links}<a href="/contacto.html">Pide presupuesto</a></nav>
+  <nav id="menu-movil" class="movil">${links}<a href="${telLink}">${site.phoneDisplay}</a></nav>
 </header>`;
 }
 
 function renderFooter() {
   const waLink = `https://wa.me/${site.whatsappIntl}`;
+  const telLink = `tel:${site.phoneTel}`;
   return `<footer><div class="foot">
   <div>
     <div class="brand"><img class="logo" src="/logo-blanco.png" alt="XAIXO Materiales de Construcción"></div>
-    <p style="margin-top:16px;max-width:32ch"><!-- TODO: confirmar antigüedad de la empresa -->Empresa familiar en Gandia dedicada a la distribución de materiales de construcción en toda la Comunidad Valenciana.</p>
+    <p style="margin-top:16px;max-width:32ch">Empresa familiar con 40 años de historia en Gandia, dedicada a la distribución de materiales de construcción en toda la Comunidad Valenciana, con suministro a toda España en obras grandes.</p>
   </div>
   <div><h4>CONTACTO</h4><div class="co">
-    <span><!-- TODO: teléfono fijo pendiente de alta --></span>
+    <a href="${telLink}">${site.phoneDisplay}</a>
     <a href="${waLink}" target="_blank" rel="noopener">WhatsApp ${site.whatsappDisplay}</a>
     <a href="mailto:${site.email}">${site.email}</a>
     <span>${site.address.street}<br>${site.address.postalCode} ${site.address.locality}, ${site.address.region}</span>
@@ -102,6 +103,7 @@ function renderJsonLd(page) {
     url: site.domain,
     image: `${site.domain}/img/hero-nave-1600.webp`,
     email: site.email,
+    telephone: site.phoneTel,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -118,8 +120,7 @@ function renderJsonLd(page) {
         closes: '19:00',
       },
     ],
-    areaServed: 'Comunidad Valenciana',
-    // TODO: añadir "telephone" en cuanto se dé de alta la línea fija.
+    areaServed: ['Comunidad Valenciana', 'España'],
   };
   if (page.slug === 'index') {
     data.sameAs = []; // TODO: enlazar perfiles sociales cuando existan
