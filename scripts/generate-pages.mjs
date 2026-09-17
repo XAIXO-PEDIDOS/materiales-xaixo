@@ -34,8 +34,7 @@ function renderHeader(activePath) {
     })
     .join('');
 
-  const waLink = `https://wa.me/${site.whatsappIntl}?text=${encodeURIComponent('Hola, quería información sobre materiales de construcción.')}`;
-
+  // TODO: cuando haya teléfono fijo, sustituir este CTA por <a class="tel" href="tel:+34...">.
   return `<header>
   <div class="head">
     <a class="brand" href="/"><img class="logo" src="/logo.png" alt="XAIXO Materiales de Construcción"></a>
@@ -43,9 +42,9 @@ function renderHeader(activePath) {
       <span></span><span></span><span></span>
     </button>
     <nav id="menu-principal">${links}</nav>
-    <a class="tel" href="${waLink}" target="_blank" rel="noopener">Pide por WhatsApp</a>
+    <a class="tel" href="/contacto.html">Pide presupuesto</a>
   </div>
-  <nav id="menu-movil" class="movil">${links}<a href="${waLink}" target="_blank" rel="noopener">Pide por WhatsApp</a></nav>
+  <nav id="menu-movil" class="movil">${links}<a href="/contacto.html">Pide presupuesto</a></nav>
 </header>`;
 }
 
