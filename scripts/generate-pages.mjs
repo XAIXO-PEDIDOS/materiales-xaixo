@@ -9,14 +9,15 @@ import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { site, pages } from './site.config.mjs';
+import { site, pages, brands } from './site.config.mjs';
 
 const root = path.resolve(fileURLToPath(import.meta.url), '..', '..');
 const pagesDir = path.join(root, 'src', 'pages');
 const publicDir = path.join(root, 'public');
 const assetsDir = path.join(root, 'assets');
+const brandLogosDir = path.join(publicDir, 'img', 'marcas');
 
-// Logos de marca: se copian tal cual (sin recomprimir) de assets/ a public/,
+// Logo de XAIXO: se copia tal cual (sin recomprimir) de assets/ a public/,
 // a diferencia de las fotos, que pasan por generate-assets.mjs.
 const LOGO_FILES = ['logo.png', 'logo-blanco.png'];
 
@@ -73,6 +74,22 @@ function renderFooter() {
   <span><a href="/aviso-legal.html">Aviso legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></span>
 </div></div>
 </footer>`;
+}
+
+// Cinta de marcas: usa el logo procesado (public/img/marcas/<slug>.png,
+// generado por generate-assets.mjs a partir de assets/logos/) si existe;
+// si falta el archivo, cae al nombre de la marca como texto.
+function renderBrandTicker() {
+  const items = brands
+    .map((b) => {
+      const logoFile = path.join(brandLogosDir, `${b.slug}.png`);
+      if (existsSync(logoFile)) {
+        return `<span class="brand-logo"><img src="/img/marcas/${b.slug}.png" alt="${b.name}" loading="lazy"></span>`;
+      }
+      return `<span>${b.name}</span>`;
+    })
+    .join('');
+  return `<div class="mk"><div class="row">${items}</div><div class="row" aria-hidden="true">${items}</div></div>`;
 }
 
 function renderJsonLd(page) {
@@ -178,7 +195,10 @@ async function build() {
 
   for (const page of pages) {
     const contentPath = path.join(pagesDir, page.contentFile);
-    const content = await readFile(contentPath, 'utf8');
+    const content = (await readFile(contentPath, 'utf8')).replace(
+      '<!-- BRANDS_TICKER -->',
+      () => renderBrandTicker()
+    );
     const html = shell(page, {
       header: renderHeader(page.path),
       footer: renderFooter(),

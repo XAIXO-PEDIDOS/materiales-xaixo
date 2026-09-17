@@ -22,6 +22,20 @@ export const site = {
   xaixoHomeUrl: 'https://www.xaixohome.com',
 };
 
+// Marcas de la cinta de la home. slug → public/img/marcas/<slug>.png,
+// generado por scripts/generate-assets.mjs a partir de assets/logos/<slug>.*.
+// Si el archivo no existe, generate-pages.mjs muestra "name" como texto.
+export const brands = [
+  { slug: 'puma', name: 'Grupo Puma' },
+  { slug: 'sika', name: 'Sika' },
+  { slug: 'chova', name: 'Chova' },
+  { slug: 'capa', name: 'Capa' },
+  { slug: 'escandella', name: 'La Escandella' },
+  { slug: 'elitecementos', name: 'Élite Cementos' },
+  { slug: 'laterlite', name: 'Laterlite' },
+  { slug: 'tejasborja', name: 'Tejas Borja' },
+];
+
 // slug: nombre de archivo final (sin extensión, "index" -> index.html)
 // contentFile: fragmento HTML en src/pages/
 // nav: si aparece en el menú principal, y con qué etiqueta
