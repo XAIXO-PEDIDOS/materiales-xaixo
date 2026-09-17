@@ -28,12 +28,14 @@ function absoluteUrl(p) {
 }
 
 function renderHeader(activePath) {
-  const links = navPages
-    .map((p) => {
-      const active = p.path === activePath ? ' aria-current="page"' : '';
-      return `<a href="${p.path}"${active}>${p.nav}</a>`;
-    })
-    .join('');
+  const links =
+    navPages
+      .map((p) => {
+        const active = p.path === activePath ? ' aria-current="page"' : '';
+        return `<a href="${p.path}"${active}>${p.nav}</a>`;
+      })
+      .join('') +
+    `<a href="${site.xaixoHomeUrl}" target="_blank" rel="noopener">Xaixo Home ↗</a>`;
 
   const telLink = `tel:${site.phoneTel}`;
   return `<header>
