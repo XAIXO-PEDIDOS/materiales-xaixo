@@ -84,7 +84,7 @@ function renderJsonLd(page) {
     name: site.name,
     legalName: site.legalName,
     url: site.domain,
-    image: `${site.domain}/img/fachada-almacen.jpg`, // TODO: sustituir por foto real optimizada
+    image: `${site.domain}/img/hero-nave-1600.webp`,
     email: site.email,
     address: {
       '@type': 'PostalAddress',
@@ -113,7 +113,7 @@ function renderJsonLd(page) {
 
 function shell(page, { header, footer, content }) {
   const canonical = absoluteUrl(page.path);
-  const ogImage = `${site.domain}/img/og-default.jpg`; // TODO: sustituir por imagen real 1200x630
+  const ogImage = `${site.domain}/img/hero-nave-1600.webp`;
   return `<!doctype html>
 <html lang="es">
 <head>

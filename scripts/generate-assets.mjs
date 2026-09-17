@@ -18,7 +18,7 @@ const outDir = path.join(root, 'public', 'img');
 
 const WIDTHS = [480, 800, 1200, 1600];
 const QUALITY = 78;
-const EXTS = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff']);
+const EXTS = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
 
 async function collectImages(dir) {
   if (!existsSync(dir)) return [];
