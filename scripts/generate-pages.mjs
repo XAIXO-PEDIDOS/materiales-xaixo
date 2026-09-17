@@ -70,7 +70,7 @@ function renderFooter() {
     <a href="/xaixo-plack.html">Xaixo Plack</a><a href="/servicios.html">Servicios</a><a href="/almacen.html">El almacén</a><a href="${site.xaixoHomeUrl}" target="_blank" rel="noopener">Xaixo Home ↗</a>
   </div></div>
 </div>
-<div class="legal"><div class="in">
+<div class="legal"><div class="legal-in">
   <span>© ${new Date().getFullYear()} ${site.legalName} · CIF ${site.cif}</span>
   <span><a href="/aviso-legal.html">Aviso legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></span>
 </div></div>
