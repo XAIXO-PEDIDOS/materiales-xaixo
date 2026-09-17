@@ -5,7 +5,7 @@
 //
 // Vite (multipágina) sirve/compila directamente los .html generados en la raíz.
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,6 +14,11 @@ import { site, pages } from './site.config.mjs';
 const root = path.resolve(fileURLToPath(import.meta.url), '..', '..');
 const pagesDir = path.join(root, 'src', 'pages');
 const publicDir = path.join(root, 'public');
+const assetsDir = path.join(root, 'assets');
+
+// Logos de marca: se copian tal cual (sin recomprimir) de assets/ a public/,
+// a diferencia de las fotos, que pasan por generate-assets.mjs.
+const LOGO_FILES = ['logo.png', 'logo-blanco.png'];
 
 const navPages = [...pages].filter((p) => p.showInNav).sort((a, b) => a.navOrder - b.navOrder);
 
@@ -33,7 +38,7 @@ function renderHeader(activePath) {
 
   return `<header>
   <div class="head">
-    <a class="brand" href="/">XAIXO<small>MATERIALES DE CONSTRUCCIÓN</small></a>
+    <a class="brand" href="/"><img class="logo" src="/logo.png" alt="XAIXO Materiales de Construcción"></a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
@@ -48,7 +53,7 @@ function renderFooter() {
   const waLink = `https://wa.me/${site.whatsappIntl}`;
   return `<footer><div class="foot">
   <div>
-    <div class="brand" style="color:#fff">XAIXO<small style="color:#8a8175">MATERIALES DE CONSTRUCCIÓN</small></div>
+    <div class="brand"><img class="logo" src="/logo-blanco.png" alt="XAIXO Materiales de Construcción"></div>
     <p style="margin-top:16px;max-width:32ch"><!-- TODO: confirmar antigüedad de la empresa -->Empresa familiar en Gandia dedicada a la distribución de materiales de construcción en toda La Safor.</p>
   </div>
   <div><h4>CONTACTO</h4><div class="co">
@@ -131,7 +136,7 @@ function shell(page, { header, footer, content }) {
 <meta name="twitter:image" content="${ogImage}">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="mask-icon" href="/favicon.svg" color="#d24a1c">
+<link rel="mask-icon" href="/favicon.svg" color="#F92C20">
 
 <link rel="stylesheet" href="/src/styles.css">
 ${renderJsonLd(page)}
@@ -156,8 +161,21 @@ ${footer}
 `;
 }
 
+async function copyLogos() {
+  for (const file of LOGO_FILES) {
+    const src = path.join(assetsDir, file);
+    if (!existsSync(src)) {
+      console.warn(`⚠ falta ${path.relative(root, src)}, el logo no se mostrará`);
+      continue;
+    }
+    await copyFile(src, path.join(publicDir, file));
+    console.log(`✓ ${file}`);
+  }
+}
+
 async function build() {
   if (!existsSync(publicDir)) await mkdir(publicDir, { recursive: true });
+  await copyLogos();
 
   for (const page of pages) {
     const contentPath = path.join(pagesDir, page.contentFile);

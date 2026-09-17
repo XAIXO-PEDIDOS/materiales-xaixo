@@ -10,3 +10,7 @@ dist/
 /public/img/
 /public/sitemap.xml
 /public/robots.txt
+
+# Logos copiados de assets/ por scripts/generate-pages.mjs (fuente: assets/logo*.png)
+/public/logo.png
+/public/logo-blanco.png
