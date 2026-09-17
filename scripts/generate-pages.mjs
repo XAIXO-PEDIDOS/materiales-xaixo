@@ -53,7 +53,7 @@ function renderFooter() {
   return `<footer><div class="foot">
   <div>
     <div class="brand"><img class="logo" src="/logo-blanco.png" alt="XAIXO Materiales de Construcción"></div>
-    <p style="margin-top:16px;max-width:32ch"><!-- TODO: confirmar antigüedad de la empresa -->Empresa familiar en Gandia dedicada a la distribución de materiales de construcción en toda La Safor.</p>
+    <p style="margin-top:16px;max-width:32ch"><!-- TODO: confirmar antigüedad de la empresa -->Empresa familiar en Gandia dedicada a la distribución de materiales de construcción en toda la Comunidad Valenciana.</p>
   </div>
   <div><h4>CONTACTO</h4><div class="co">
     <span><!-- TODO: teléfono fijo pendiente de alta --></span>
@@ -101,7 +101,7 @@ function renderJsonLd(page) {
         closes: '19:00',
       },
     ],
-    areaServed: 'La Safor',
+    areaServed: 'Comunidad Valenciana',
     // TODO: añadir "telephone" en cuanto se dé de alta la línea fija.
   };
   if (page.slug === 'index') {
