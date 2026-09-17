@@ -279,9 +279,9 @@ form.card .enviar{justify-self:start;margin-top:6px}
 .subs{display:flex;flex-wrap:wrap;gap:7px}
 .subs .sub{border:1px solid var(--line);background:var(--paper);border-radius:7px;padding:8px 12px;font-size:13.5px;font-weight:500;color:var(--ink)}
 .subs .sub:hover{border-color:var(--brand);color:var(--brand)}
-.fam-meta{margin-top:16px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fam-meta{margin-top:16px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .fam-brands{font-size:13.5px;color:var(--ink-2)}
 .fam-brands b{color:var(--ink);font-weight:700}
-.ask{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:99px;padding:10px 17px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.ask{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:99px;padding:10px 17px;font-weight:700;font-size:13.5px;white-space:nowrap;margin-left:auto}
 .ask:hover{background:var(--ink);color:#fff}
 @media (prefers-reduced-motion:reduce){.acc .bd{transition:none}}
