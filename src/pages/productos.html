@@ -1,98 +1,191 @@
 <main>
-<div class="wrap page-hero">
+<div class="wrap-cat page-hero">
   <span class="tag">CATÁLOGO</span>
-  <h1>Familias de materiales de construcción.</h1>
-  <p>Trabajamos con stock permanente en las familias habituales de obra y, bajo pedido, con cualquier referencia especial que necesite tu proyecto. Pide precio y disponibilidad por WhatsApp o desde el <a href="/contacto.html" style="text-decoration:underline">formulario de contacto</a>.</p>
+  <h1>Todo el catálogo,<br>familia por familia.</h1>
+  <p>Del saco de cemento al panel sándwich. Abre cada familia para ver qué tenemos en almacén; si buscas algo que no está, te lo pedimos y normalmente lo tienes en 24-48 h.</p>
 </div>
 
-<div class="wrap"><section>
-  <div class="familias">
-
-    <div class="familia rv" id="obra">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Obra y cemento</div>
-      <div class="tx">
-        <h3>Obra y cemento</h3>
-        <p>Cemento, morteros, yeso, áridos, ladrillo y bloque para estructura y albañilería.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="tabiqueria">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Placa y perfilería</div>
-      <div class="tx">
-        <h3>Tabiquería y aislamiento</h3>
-        <p>Placa de yeso, perfilería, lana mineral y sistemas de techo. Es nuestra especialidad: <a href="/xaixo-plack.html" style="text-decoration:underline">Xaixo Plack</a>.</p>
-        <a class="btn s" href="/xaixo-plack.html">Ver Xaixo Plack</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="cubiertas">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Teja</div>
-      <div class="tx">
-        <h3>Cubiertas y tejas</h3>
-        <p>Teja cerámica y de hormigón, y sistemas de impermeabilización para cubierta.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="pavimentos">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Pavimento</div>
-      <div class="tx">
-        <h3>Pavimentos</h3>
-        <p>Porcelánico, gres y soluciones antideslizantes para interior y exterior.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="ferreteria">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Ferretería</div>
-      <div class="tx">
-        <h3>Ferretería</h3>
-        <p>Fijaciones, colas, siliconas, tornillería y consumibles de obra.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="pinturas">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Pintura</div>
-      <div class="tx">
-        <h3>Pinturas y SATE</h3>
-        <p>Pintura de interior y exterior, imprimaciones y sistemas de aislamiento térmico por el exterior.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="herramienta">
-      <div class="ph"><!-- TODO: foto real -->FOTO — Herramienta</div>
-      <div class="tx">
-        <h3>Herramienta y maquinaria</h3>
-        <p>Herramienta manual y eléctrica, y consumibles de corte y desbaste.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
-    <div class="familia rv" id="proteccion">
-      <div class="ph"><!-- TODO: foto real -->FOTO — EPIs</div>
-      <div class="tx">
-        <h3>Protección laboral</h3>
-        <p>Calzado de seguridad, guantes, cascos, señalización y equipos de protección individual.</p>
-        <a class="btn s" href="/contacto.html">Pedir precio</a>
-      </div>
-    </div>
-
+<div class="cat-bar"><div class="cat-bin">
+  <div class="cat-search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" id="cat-q" placeholder="Buscar material: termoarcilla, cemento cola…" aria-label="Buscar familia o subfamilia de material">
   </div>
-</section></div>
-
-<div class="wrap"><section style="padding-top:0">
-  <div class="pro">
-    <div>
-      <span class="tag" style="color:#ffd9cb">¿NO ENCUENTRAS LO QUE BUSCAS?</span>
-      <h2>Pregúntanos,<br>seguro que lo tenemos.</h2>
-      <p>Este catálogo agrupa las familias principales del almacén. Si necesitas una referencia concreta, dinos qué obra tienes entre manos y te decimos disponibilidad y precio.</p>
-    </div>
-    <div class="acts">
-      <a class="btn w" href="/contacto.html">Pedir presupuesto</a>
-    </div>
+  <span class="cat-count" id="cat-count">15 familias</span>
+  <div class="cat-tools">
+    <button type="button" class="cat-tbtn" id="cat-open-all">Abrir todo</button>
+    <button type="button" class="cat-tbtn" id="cat-close-all">Cerrar todo</button>
   </div>
-</section></div>
+</div></div>
+
+<div class="wrap-cat">
+
+<div class="cat-grp"><span>01</span><h2>Materiales de construcción</h2><div class="cat-line"></div></div>
+<div class="acc" id="acc-1">
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-1">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6c.2 1 .8 2 1.6 2.6C18.5 7.5 20 9.6 20 12.6v2.9c0 3.3-3 5-8 5s-8-1.7-8-5v-2.9c0-3 1.5-5.1 3.4-6C7.2 6 7.8 5 9 4z"/><path d="M7.4 7.6h9.2"/><path d="M7 12.5h10M7 15.5h10"/></svg></span>
+    <span class="tx"><h3>Áridos y cementos</h3><p>Arena, gravas, arcilla expandida, cemento gris y blanco</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-1"><div><div class="inner">
+    <div class="subs"><span class="sub">Arena</span><span class="sub">Gravas</span><span class="sub">Arcilla expandida</span><span class="sub">Cemento gris</span><span class="sub">Cemento blanco</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Élite Cementos</b>, <b>Laterlite</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Áridos y cementos">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-2">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="8" rx="1.2"/><path d="M9 8v8M15 8v8"/></svg></span>
+    <span class="tx"><h3>Ladrillos y bloques</h3><p>Hueco, tablero cerámico, termoarcilla, caravista, bloque</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-2"><div><div class="inner">
+    <div class="subs"><span class="sub">Ladrillo hueco</span><span class="sub">Tablero cerámico</span><span class="sub">Termoarcilla</span><span class="sub">Caravista</span><span class="sub">Bloque de hormigón</span><span class="sub">Bloques de vidrio</span><span class="sub">Complementos tabiquería</span></div>
+    <div class="fam-meta"><span class="fam-brands"></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Ladrillos y bloques">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-3">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3.5" width="11" height="17" rx="1"/><path d="M17.5 3.5v17M17.5 3.5H21M17.5 20.5H21"/></svg></span>
+    <span class="tx"><h3>Tabiquería seca y falsos techos</h3><p>Placa de yeso, perfilería, pastas, escayola — nuestra especialidad</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-3"><div><div class="inner">
+    <div class="subs"><span class="sub">Placa de yeso — PYL</span><span class="sub">Hidrófuga</span><span class="sub">Ignífuga</span><span class="sub">Falsos techos</span><span class="sub">Perfilería</span><span class="sub">Pastas y cintas</span><span class="sub">Escayola</span></div>
+    <div class="fam-meta"><span class="fam-brands">Ver <a href="/xaixo-plack.html"><b>Xaixo Plack ↗</b></a>, nuestra división especializada</span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Tabiquería seca y falsos techos">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-4">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9.5h12l-1.4 10a1.6 1.6 0 0 1-1.6 1.4H9a1.6 1.6 0 0 1-1.6-1.4z"/><path d="M9 9.5a3 3 0 0 1 6 0"/></svg></span>
+    <span class="tx"><h3>Morteros y yesos</h3><p>Albañilería, acabado, monocapa, morteros técnicos, cal</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-4"><div><div class="inner">
+    <div class="subs"><span class="sub">Mortero de albañilería</span><span class="sub">Mortero de acabado</span><span class="sub">Monocapa</span><span class="sub">Morteros técnicos</span><span class="sub">Yesos</span><span class="sub">Cal</span><span class="sub">Aditivos</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Grupo Puma</b>, <b>Sika</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Morteros y yesos">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-5">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 14.5h15l-2 3.5H6.5z"/><path d="M12 14.5V8.5"/><ellipse cx="12" cy="7" rx="2.6" ry="1.7"/><path d="M7 20.5l1-1.3M11 20.5l1-1.3M15 20.5l1-1.3"/></svg></span>
+    <span class="tx"><h3>Adhesivos y colocación cerámica</h3><p>Cemento cola, gran formato, juntas, niveladores</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-5"><div><div class="inner">
+    <div class="subs"><span class="sub">Cemento cola</span><span class="sub">Gran formato</span><span class="sub">Juntas</span><span class="sub">Crucetas y niveladores</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Grupo Puma</b>, <b>Sika</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Adhesivos y colocación cerámica">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-6">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 16c1.4-3 2.8-3 4.2 0s2.8 3 4.2 0 2.8-3 4.2 0 2.8 3 4.2 0"/><path d="M3 19.5h18"/></svg></span>
+    <span class="tx"><h3>Cubiertas y tejados</h3><p>Teja cerámica y hormigón, panel sándwich, claraboyas</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-6"><div><div class="inner">
+    <div class="subs"><span class="sub">Teja cerámica</span><span class="sub">Teja hormigón</span><span class="sub">Panel sándwich</span><span class="sub">Placas de cubierta</span><span class="sub">Remates y fijación</span><span class="sub">Claraboyas</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Tejas Borja</b>, <b>La Escandella</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Cubiertas y tejados">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-7">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.2" cy="12" r="6.2"/><path d="M9.2 8.4a3.6 3.6 0 0 1 0 7.2 2.4 2.4 0 0 1 0-4.8"/><path d="M15 12h5.5"/></svg></span>
+    <span class="tx"><h3>Impermeabilización y aislamiento</h3><p>Tela asfáltica, líquida, lana mineral, XPS, geotextiles</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-7"><div><div class="inner">
+    <div class="subs"><span class="sub">Lana mineral</span><span class="sub">XPS y EPS</span><span class="sub">Aislamiento acústico</span><span class="sub">Tela asfáltica</span><span class="sub">Impermeabilización líquida</span><span class="sub">Imprimaciones</span><span class="sub">Geotextiles y drenajes</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Sika</b>, <b>Chova</b>, <b>Capa</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Impermeabilización y aislamiento">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-8">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4.5h12M6 19.5h12M12 4.5v15"/><path d="M8.5 4.5v3M15.5 4.5v3M8.5 16.5v3M15.5 16.5v3"/></svg></span>
+    <span class="tx"><h3>Forjados y prefabricados</h3><p>Acero, mallazo, vigas, bovedillas, piedra natural</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-8"><div><div class="inner">
+    <div class="subs"><span class="sub">Acero y mallazo</span><span class="sub">Vigas</span><span class="sub">Bovedillas</span><span class="sub">Forjado sanitario</span><span class="sub">Prefabricados</span><span class="sub">Piedra natural</span></div>
+    <div class="fam-meta"><span class="fam-brands">Suministro coordinado directo a obra en pedidos grandes</span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Forjados y prefabricados">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-9">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5v8a6.5 6.5 0 0 0 6.5 6.5h7"/><path d="M9.2 4.5v5.2a3.3 3.3 0 0 0 3.3 3.3H18.5"/><path d="M5 4.5h4.2M18.5 19h-5"/></svg></span>
+    <span class="tx"><h3>Evacuación de agua</h3><p>Tubería y canalón PVC, metálico, arquetas, sumideros</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-9"><div><div class="inner">
+    <div class="subs"><span class="sub">Tubería PVC</span><span class="sub">Canalón PVC</span><span class="sub">Canalón metálico</span><span class="sub">Arquetas</span><span class="sub">Sumideros y canales</span><span class="sub">Fundición dúctil</span><span class="sub">Depósitos y fosas</span></div>
+    <div class="fam-meta"><span class="fam-brands"></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Evacuación de agua">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-10">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="18" rx="0.6"/><path d="M3.5 20.5h17"/><circle cx="15" cy="12" r="1.1" fill="currentColor" stroke="none"/><path d="M6 6.7h.01M6 12h.01M6 17.3h.01"/></svg></span>
+    <span class="tx"><h3>Carpintería</h3><p>Puertas metálicas y cortafuego, registros, escaleras</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-10"><div><div class="inner">
+    <div class="subs"><span class="sub">Puertas metálicas</span><span class="sub">Cortafuego</span><span class="sub">Registros contadores</span><span class="sub">Estructura corredera</span><span class="sub">Escaleras escamoteables</span><span class="sub">Cercados</span></div>
+    <div class="fam-meta"><span class="fam-brands">Ventanas de PVC y aluminio en <a href="https://www.xaixohome.com" target="_blank" rel="noopener"><b>Xaixo Home ↗</b></a></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Carpintería">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+</div>
+
+<div class="cat-grp"><span>02</span><h2>Ferretería y útiles de construcción</h2><div class="cat-line"></div></div>
+<div class="acc" id="acc-2">
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-11">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h9a2 2 0 0 1 0 4H3z"/><path d="M12 11h4.5l3 1.5v1L16.5 15H12"/><path d="M7 14v3.5"/><path d="M21 12.5h1.5"/></svg></span>
+    <span class="tx"><h3>Herramienta y maquinaria</h3><p>Manual, eléctrica, maquinaria de obra y consumibles</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-11"><div><div class="inner">
+    <div class="subs"><span class="sub">Herramienta manual</span><span class="sub">Herramienta eléctrica</span><span class="sub">Maquinaria</span><span class="sub">Discos y brocas</span><span class="sub">Accesorios</span></div>
+    <div class="fam-meta"><span class="fam-brands"></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Herramienta y maquinaria">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-12">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><path d="M9.8 5h4.4"/><path d="M12 7.5v13"/><path d="M9.3 10.2l2.7 1.4 2.7-1.4M9.3 13.2l2.7 1.4 2.7-1.4M9.3 16.2l2.7 1.4 2.7-1.4"/></svg></span>
+    <span class="tx"><h3>Fijaciones y selladores</h3><p>Tornillería, tacos, anclaje químico, siliconas, espumas</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-12"><div><div class="inner">
+    <div class="subs"><span class="sub">Tornillería</span><span class="sub">Tacos y anclajes</span><span class="sub">Anclaje químico</span><span class="sub">Siliconas</span><span class="sub">Espuma de poliuretano</span><span class="sub">Adhesivos de montaje</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Sika</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Fijaciones y selladores">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-13">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9h10v10.5a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1z"/><path d="M6.5 9V6.8h10V9"/><path d="M15.5 5.2l3.3-2.3 1.1 1.1-2.3 3.3-2.4.9z"/></svg></span>
+    <span class="tx"><h3>Pinturas y droguería</h3><p>Interior, exterior, SATE, imprimaciones, auxiliares</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-13"><div><div class="inner">
+    <div class="subs"><span class="sub">Pintura interior</span><span class="sub">Pintura exterior</span><span class="sub">SATE</span><span class="sub">Imprimaciones</span><span class="sub">Disolventes</span><span class="sub">Rodillos y brochas</span></div>
+    <div class="fam-meta"><span class="fam-brands">Marcas: <b>Grupo Puma</b>, <b>Capa</b></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Pinturas y droguería">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-14">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 16.5a8.5 8.5 0 0 1 17 0"/><path d="M2 16.5h20"/><path d="M11.3 7.5v2.6"/></svg></span>
+    <span class="tx"><h3>Protección y seguridad en obra</h3><p>Calzado, cascos, guantes, arneses, señalización</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-14"><div><div class="inner">
+    <div class="subs"><span class="sub">Calzado de seguridad</span><span class="sub">Cascos</span><span class="sub">Guantes</span><span class="sub">Arneses</span><span class="sub">Alta visibilidad</span><span class="sub">Señalización</span></div>
+    <div class="fam-meta"><span class="fam-brands"></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Protección y seguridad en obra">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd" aria-expanded="false" aria-controls="fam-15">
+    <span class="fam-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.7 4.3a3.8 3.8 0 0 0-4.9 5.1L4 14.2v2.8h2.8l4.8-4.8a3.8 3.8 0 0 0 5.1-4.9l-2.2 2.2-2-2z"/></svg></span>
+    <span class="tx"><h3>Fontanería y electricidad</h3><p>Tubería, valvulería, tubo corrugado y material eléctrico</p></span>
+    <span class="ar" aria-hidden="true">+</span>
+  </button>
+  <div class="bd" id="fam-15"><div><div class="inner">
+    <div class="subs"><span class="sub">Tubería multicapa</span><span class="sub">Valvulería</span><span class="sub">Desagües</span><span class="sub">Tubo corrugado</span><span class="sub">Cajas y mecanismos</span></div>
+    <div class="fam-meta"><span class="fam-brands"></span><a class="ask" href="https://wa.me/34689248559" target="_blank" rel="noopener" data-familia="Fontanería y electricidad">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+</div>
+
+<div class="cross" style="margin:clamp(30px,4vw,56px) 0">
+  <div>
+    <h2>¿No encuentras lo que buscas?</h2>
+    <p>Trabajamos con central de compras: si no está en almacén, te lo pedimos y normalmente lo tienes en 24-48 horas. Mándanos la lista y te pasamos precio.</p>
+  </div>
+  <a class="btn s" href="/contacto.html">Mándanos tu lista →</a>
+</div>
+
+</div>
 </main>

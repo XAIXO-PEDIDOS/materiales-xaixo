@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Productos — XAIXO Materiales de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16120f; --ink-2:#5b5248; --paper:#faf8f5; --card:#fff; --line:#e0d9ce;
+  --brand:#F92C20; --brand-2:#D1180E; --sand:#efeae1;
+  --f:"Manrope",system-ui,-apple-system,sans-serif;
+  --g:clamp(18px,4.5vw,72px);
+}
+:root:not([data-theme="light"]),:root[data-theme="dark"]{--ink:#16120f;--paper:#faf8f5;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:var(--g)}
+
+header{position:sticky;top:0;z-index:40;background:rgba(250,248,245,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.head{max-width:1440px;margin:0 auto;padding:14px var(--g);display:flex;align-items:center;gap:30px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.03em;line-height:.95;color:var(--brand)}
+.logo small{display:block;font-weight:700;font-size:8.5px;letter-spacing:.18em;color:var(--ink);margin-top:2px}
+nav{margin-left:auto;display:flex;gap:4px;font-size:14.5px;font-weight:600}
+nav a{padding:9px 14px;border-radius:99px}
+nav a.on,nav a:hover{background:var(--ink);color:#fff}
+.cta-h{background:var(--brand);color:#fff;font-weight:700;padding:12px 20px;border-radius:99px;font-size:14.5px;white-space:nowrap}
+.cta-h:hover{background:var(--brand-2)}
+@media(max-width:1080px){nav{display:none}}
+
+.top{padding:clamp(32px,4.4vw,60px) 0 clamp(16px,2vw,24px)}
+h1{font-size:clamp(36px,5.8vw,74px);font-weight:800;letter-spacing:-.045em;line-height:.92}
+.top p{margin-top:16px;font-size:clamp(16px,1.4vw,18.5px);color:var(--ink-2);max-width:58ch}
+
+/* toolbar */
+.bar{position:sticky;top:68px;z-index:30;background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:22px}
+.bin{max-width:1180px;margin:0 auto;padding:11px var(--g);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.search{position:relative;flex:1 1 240px;max-width:380px}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:11px 16px 11px 40px;font:inherit;font-size:14.5px}
+.search input:focus{outline:none;border-color:var(--ink)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.45}
+.tools{margin-left:auto;display:flex;gap:8px}
+.tbtn{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:10px 16px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink-2);cursor:pointer}
+.tbtn:hover{border-color:var(--ink);color:var(--ink)}
+.count{font-size:13.5px;color:var(--ink-2);align-self:center}
+
+/* group */
+.grp{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:clamp(26px,3.2vw,44px) 0 12px}
+.grp span{font-size:11.5px;font-weight:800;letter-spacing:.16em;color:var(--brand)}
+.grp h2{font-size:clamp(18px,2vw,24px);font-weight:800;letter-spacing:-.03em}
+.grp .line{flex:1;height:1px;background:var(--line);min-width:30px}
+
+/* accordion */
+.acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.item + .item{border-top:1px solid var(--line)}
+.item.hide{display:none}
+.hd{width:100%;background:none;border:0;font:inherit;text-align:left;display:flex;align-items:center;gap:16px;padding:14px 18px;cursor:pointer;transition:background .18s}
+.hd:hover{background:var(--sand)}
+.thumb{width:64px;height:48px;border-radius:8px;flex:none;background:repeating-linear-gradient(135deg,#e7e0d5 0 10px,#e2dad0 10px 20px);display:grid;place-items:center;font-size:8.5px;color:#9d9488;letter-spacing:.06em}
+.hd .tx{flex:1;min-width:0}
+.hd h3{font-size:clamp(16.5px,1.6vw,19.5px);font-weight:700;letter-spacing:-.02em}
+.hd p{font-size:14px;color:var(--ink-2);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hd .ar{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s;color:var(--ink-2)}
+.item.open .hd{background:var(--sand)}
+.item.open .ar{transform:rotate(45deg);background:var(--ink);border-color:var(--ink);color:#fff}
+.bd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s cubic-bezier(.3,.8,.3,1)}
+.item.open .bd{grid-template-rows:1fr}
+.bd > div{overflow:hidden}
+.inner{padding:4px 18px 20px 98px}
+@media(max-width:640px){.inner{padding:4px 18px 20px}}
+.subs{display:flex;flex-wrap:wrap;gap:7px}
+.sub{border:1px solid var(--line);background:var(--paper);border-radius:7px;padding:8px 12px;font-size:13.5px;font-weight:500}
+.sub:hover{border-color:var(--brand);color:var(--brand)}
+.meta{margin-top:16px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brands{font-size:13.5px;color:var(--ink-2)}
+.brands b{color:var(--ink);font-weight:700}
+.ask{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:99px;padding:10px 17px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.ask:hover{background:var(--ink);color:#fff}
+
+.pedido{margin:clamp(30px,4vw,56px) 0;background:var(--ink);color:#fff;border-radius:16px;padding:clamp(24px,3.4vw,46px);display:grid;grid-template-columns:1.3fr auto;gap:26px;align-items:center}
+.pedido h3{font-size:clamp(21px,2.5vw,33px);font-weight:800;letter-spacing:-.035em;line-height:1.06}
+.pedido p{color:#c9c1b5;margin-top:12px;max-width:52ch}
+.pedido .b{background:#fff;color:var(--ink);border-radius:99px;padding:14px 24px;font-weight:700;white-space:nowrap}
+.pedido .b:hover{background:var(--brand);color:#fff}
+@media(max-width:780px){.pedido{grid-template-columns:1fr}}
+
+.note{background:#fff8e6;border:1px dashed #d9c98c;color:#6b5c22;font-size:13.5px;padding:11px 15px;border-radius:10px;margin:20px 0}
+.wa{position:fixed;right:18px;bottom:18px;z-index:50;background:var(--ink);color:#fff;border-radius:99px;padding:14px 20px;font-weight:700;font-size:14.5px;box-shadow:0 10px 26px rgba(22,18,15,.25)}
+.wa:hover{background:var(--brand)}
+footer{background:var(--ink);color:#8a8175;margin-top:40px;padding:26px var(--g);font-size:13px;text-align:center}
+@media (prefers-reduced-motion:reduce){.bd{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="head">
+  <a class="logo" href="#">XAIXO<small>MATERIALES DE CONSTRUCCIÓN</small></a>
+  <nav><a href="#" class="on">Productos</a><a href="#">Xaixo Plack</a><a href="#">Servicios</a><a href="#">Almacén</a><a href="#">Contacto</a></nav>
+  <a class="cta-h" href="#">Pide presupuesto</a>
+</div></header>
+
+<div class="wrap top">
+  <h1>Todo el catálogo,<br>familia por familia.</h1>
+  <p>Del saco de cemento al panel sándwich. Abre cada familia para ver qué tenemos en almacén; si buscas algo que no está, te lo pedimos y normalmente lo tienes en 24-48 h.</p>
+</div>
+
+<div class="bar"><div class="bin">
+  <div class="search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" id="q" placeholder="Buscar material: termoarcilla, cemento cola…" aria-label="Buscar material">
+  </div>
+  <span class="count" id="count">14 familias</span>
+  <div class="tools">
+    <button class="tbtn" id="all">Abrir todo</button>
+    <button class="tbtn" id="none">Cerrar todo</button>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<div class="grp"><span>01</span><h2>Materiales de construcción</h2><div class="line"></div></div>
+<div class="acc" id="acc1">
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Áridos y cementos</h3><p>Arena, gravas, arcilla expandida, cemento gris y blanco</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Arena</a><a class="sub" href="#">Gravas</a><a class="sub" href="#">Arcilla expandida</a><a class="sub" href="#">Cemento gris</a><a class="sub" href="#">Cemento blanco</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Elite Cementos</b>, <b>Laterlite</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Ladrillos y bloques</h3><p>Hueco, tablero cerámico, termoarcilla, caravista, bloque</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Ladrillo hueco</a><a class="sub" href="#">Tablero cerámico</a><a class="sub" href="#">Termoarcilla</a><a class="sub" href="#">Caravista</a><a class="sub" href="#">Bloque de hormigón</a><a class="sub" href="#">Bloques de vidrio</a><a class="sub" href="#">Complementos tabiquería</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Escandella</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Tabiquería seca y falsos techos</h3><p>Placa de yeso, perfilería, pastas, escayola — nuestra especialidad</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Placa de yeso — PYL</a><a class="sub" href="#">Hidrófuga</a><a class="sub" href="#">Ignífuga</a><a class="sub" href="#">Falsos techos</a><a class="sub" href="#">Perfilería</a><a class="sub" href="#">Pastas y cintas</a><a class="sub" href="#">Escayola</a></div>
+    <div class="meta"><span class="brands">Ver <b>Xaixo Plack ↗</b>, nuestra división especializada</span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Morteros y yesos</h3><p>Albañilería, acabado, monocapa, morteros técnicos, cal</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Mortero de albañilería</a><a class="sub" href="#">Mortero de acabado</a><a class="sub" href="#">Monocapa</a><a class="sub" href="#">Morteros técnicos</a><a class="sub" href="#">Yesos</a><a class="sub" href="#">Cal</a><a class="sub" href="#">Aditivos</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Grupo Puma</b>, <b>Sika</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Adhesivos y colocación cerámica</h3><p>Cemento cola, gran formato, juntas, niveladores</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Cemento cola</a><a class="sub" href="#">Gran formato</a><a class="sub" href="#">Juntas</a><a class="sub" href="#">Crucetas y niveladores</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Grupo Puma</b>, <b>Sika</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Cubiertas y tejados</h3><p>Teja cerámica y hormigón, panel sándwich, claraboyas</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Teja cerámica</a><a class="sub" href="#">Teja hormigón</a><a class="sub" href="#">Panel sándwich</a><a class="sub" href="#">Placas de cubierta</a><a class="sub" href="#">Remates y fijación</a><a class="sub" href="#">Claraboyas</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Tejas Borja</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Impermeabilización y aislamiento</h3><p>Tela asfáltica, líquida, lana mineral, XPS, geotextiles</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Lana mineral</a><a class="sub" href="#">XPS y EPS</a><a class="sub" href="#">Aislamiento acústico</a><a class="sub" href="#">Tela asfáltica</a><a class="sub" href="#">Impermeabilización líquida</a><a class="sub" href="#">Imprimaciones</a><a class="sub" href="#">Geotextiles y drenajes</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Sika</b>, <b>Capa</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Forjados y prefabricados</h3><p>Acero, mallazo, vigas, bovedillas, piedra natural</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Acero y mallazo</a><a class="sub" href="#">Vigas</a><a class="sub" href="#">Bovedillas</a><a class="sub" href="#">Forjado sanitario</a><a class="sub" href="#">Prefabricados</a><a class="sub" href="#">Piedra natural</a></div>
+    <div class="meta"><span class="brands">Servicio con tráiler directo a obra</span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Evacuación de agua</h3><p>Tubería y canalón PVC, metálico, arquetas, sumideros</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Tubería PVC</a><a class="sub" href="#">Canalón PVC</a><a class="sub" href="#">Canalón metálico</a><a class="sub" href="#">Arquetas</a><a class="sub" href="#">Sumideros y canales</a><a class="sub" href="#">Fundición dúctil</a><a class="sub" href="#">Depósitos y fosas</a></div>
+    <div class="meta"><span class="brands"></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Carpintería</h3><p>Puertas metálicas y cortafuego, registros, escaleras</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Puertas metálicas</a><a class="sub" href="#">Cortafuego</a><a class="sub" href="#">Registros contadores</a><a class="sub" href="#">Estructura corredera</a><a class="sub" href="#">Escaleras escamoteables</a><a class="sub" href="#">Cercados</a></div>
+    <div class="meta"><span class="brands">Ventanas de PVC y aluminio en <b>Xaixo Home ↗</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+</div>
+
+<div class="grp"><span>02</span><h2>Ferretería y útiles de construcción</h2><div class="line"></div></div>
+<div class="acc" id="acc2">
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Herramienta y maquinaria</h3><p>Manual, eléctrica, maquinaria de obra y consumibles</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Herramienta manual</a><a class="sub" href="#">Herramienta eléctrica</a><a class="sub" href="#">Maquinaria</a><a class="sub" href="#">Discos y brocas</a><a class="sub" href="#">Accesorios</a></div>
+    <div class="meta"><span class="brands"></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Fijaciones y selladores</h3><p>Tornillería, tacos, anclaje químico, siliconas, espumas</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Tornillería</a><a class="sub" href="#">Tacos y anclajes</a><a class="sub" href="#">Anclaje químico</a><a class="sub" href="#">Siliconas</a><a class="sub" href="#">Espuma de poliuretano</a><a class="sub" href="#">Adhesivos de montaje</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Sika</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Pinturas y droguería</h3><p>Interior, exterior, SATE, imprimaciones, auxiliares</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Pintura interior</a><a class="sub" href="#">Pintura exterior</a><a class="sub" href="#">SATE</a><a class="sub" href="#">Imprimaciones</a><a class="sub" href="#">Disolventes</a><a class="sub" href="#">Rodillos y brochas</a></div>
+    <div class="meta"><span class="brands">Marcas: <b>Grupo Puma</b>, <b>Capa</b></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Protección y seguridad en obra</h3><p>Calzado, cascos, guantes, arneses, señalización</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Calzado de seguridad</a><a class="sub" href="#">Cascos</a><a class="sub" href="#">Guantes</a><a class="sub" href="#">Arneses</a><a class="sub" href="#">Alta visibilidad</a><a class="sub" href="#">Señalización</a></div>
+    <div class="meta"><span class="brands"></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+  <div class="item"><button class="hd"><span class="thumb">FOTO</span><span class="tx"><h3>Fontanería y electricidad</h3><p>Tubería, valvulería, tubo corrugado y material eléctrico</p></span><span class="ar">+</span></button>
+  <div class="bd"><div><div class="inner">
+    <div class="subs"><a class="sub" href="#">Tubería multicapa</a><a class="sub" href="#">Valvulería</a><a class="sub" href="#">Desagües</a><a class="sub" href="#">Tubo corrugado</a><a class="sub" href="#">Cajas y mecanismos</a></div>
+    <div class="meta"><span class="brands"></span><a class="ask" href="#">Preguntar por WhatsApp →</a></div>
+  </div></div></div></div>
+
+</div>
+
+<div class="pedido">
+  <div><h3>¿No encuentras lo que buscas?</h3><p>Trabajamos con central de compras: si no está en almacén, te lo pedimos y normalmente lo tienes en 24-48 horas. Mándanos la lista y te pasamos precio.</p></div>
+  <a class="b" href="#">Mándanos tu lista →</a>
+</div>
+
+<div class="note">Maqueta: las fotos y el reparto de marcas por familia son de muestra.</div>
+</div>
+
+<footer>© 2026 Materiales Xaixo Home S.L. · Gran Via del Castell de Bairen, 20 · Gandia</footer>
+<a class="wa" href="#">Pide por WhatsApp</a>
+
+<script>
+var items=[].slice.call(document.querySelectorAll('.item'));
+items.forEach(function(it){
+  var hd=it.querySelector('.hd');
+  hd.setAttribute('aria-expanded','false');
+  hd.addEventListener('click',function(){
+    var open=it.classList.toggle('open');
+    hd.setAttribute('aria-expanded',open?'true':'false');
+    it.querySelector('.ar').textContent=open?'+':'+';
+  });
+});
+document.getElementById('all').onclick=function(){items.forEach(function(it){if(!it.classList.contains('hide')){it.classList.add('open');it.querySelector('.hd').setAttribute('aria-expanded','true')}})};
+document.getElementById('none').onclick=function(){items.forEach(function(it){it.classList.remove('open');it.querySelector('.hd').setAttribute('aria-expanded','false')})};
+var q=document.getElementById('q'),count=document.getElementById('count');
+q.addEventListener('input',function(){
+  var v=q.value.trim().toLowerCase(),n=0;
+  items.forEach(function(it){
+    var t=it.textContent.toLowerCase();
+    var hit=!v||t.indexOf(v)>-1;
+    it.classList.toggle('hide',!hit);
+    if(hit){n++;if(v)it.classList.add('open')}
+  });
+  count.textContent=v?(n+(n===1?' familia':' familias')):'14 familias';
+});
+</script>
+</body>
+</html>
