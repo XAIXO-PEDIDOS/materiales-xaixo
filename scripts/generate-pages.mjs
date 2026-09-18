@@ -154,8 +154,9 @@ function shell(page, { header, footer, content }) {
 <meta name="twitter:description" content="${page.description}">
 <meta name="twitter:image" content="${ogImage}">
 
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="mask-icon" href="/favicon.svg" color="#F92C20">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
 <link rel="stylesheet" href="/src/styles.css">
 ${renderJsonLd(page)}
