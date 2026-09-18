@@ -2,6 +2,10 @@
 //  1) Fotos de assets/source/**  → WebP con variantes responsive (ancho) en public/img/**.
 //  2) Logos de marca de assets/logos/** → recortados a su contenido real y
 //     normalizados a una misma altura, en public/img/marcas/**.
+//  3) Recortes "con dirección de arte" (CUSTOM_CROPS): para huecos concretos
+//     de la web donde escalar la foto entera queda blando (p. ej. una tarjeta
+//     estrecha y vertical recortada de una foto panorámica). Se generan a
+//     partir del mismo original de assets/source/, con su propio encuadre.
 //
 // Uso:  npm run generate:assets
 //
@@ -25,6 +29,23 @@ const WIDTHS = [480, 800, 1200, 1600];
 const QUALITY = 78;
 const EXTS = new Set(['.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp']);
 const LOGO_HEIGHT = 72; // px de salida (2x de los ~36px a los que se muestra en la cinta)
+
+// Recortes manuales para huecos con una proporción muy distinta a la de la
+// foto original. "crop" son píxeles del original; "width" es el ancho final
+// (se pensó para que fuera al menos el doble del ancho en pantalla del hueco,
+// para retina). Calidad 90: aquí sí importa el detalle, la foto no se reduce
+// mucho más allá del recorte.
+const CUSTOM_CROPS = [
+  {
+    // Tarjeta "Xaixo Home" de la home (.hero-card): casi cuadrada en
+    // escritorio. Recorte centrado en la isla de cocina, a todo el alto del
+    // original (2688x1520) para no perder ni techo ni banquetas.
+    source: 'xaixohome.webp',
+    output: 'xaixohome-card.webp',
+    crop: { left: 514, top: 0, width: 1439, height: 1520 },
+    width: 900,
+  },
+];
 
 async function collectImages(dir) {
   if (!existsSync(dir)) return [];
@@ -78,6 +99,18 @@ async function processBrandLogo(file) {
   }
 }
 
+async function processCustomCrops() {
+  for (const { source, output, crop, width } of CUSTOM_CROPS) {
+    const file = path.join(sourceDir, source);
+    if (!existsSync(file)) {
+      console.warn(`⚠ falta ${path.relative(root, file)}, no se genera el recorte ${output}`);
+      continue;
+    }
+    await sharp(file).extract(crop).resize({ width }).webp({ quality: 90 }).toFile(path.join(outDir, output));
+    console.log(`✓ recorte ${source} → img/${output}`);
+  }
+}
+
 async function run() {
   const images = await collectImages(sourceDir);
   if (images.length === 0) {
@@ -100,6 +133,9 @@ async function run() {
       await processBrandLogo(file);
     }
   }
+
+  await mkdir(outDir, { recursive: true });
+  await processCustomCrops();
 }
 
 run().catch((err) => {

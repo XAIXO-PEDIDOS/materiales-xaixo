@@ -13,10 +13,13 @@
     </div>
 
     <a class="hero-card" href="https://www.xaixohome.com" target="_blank" rel="noopener">
-      <img class="photo" src="/img/xaixohome.webp"
-        srcset="/img/xaixohome-480.webp 480w, /img/xaixohome-800.webp 800w, /img/xaixohome-1200.webp 1200w, /img/xaixohome-1600.webp 1600w, /img/xaixohome.webp 2688w"
-        sizes="(max-width:900px) 100vw, 340px" width="2688" height="1520"
-        alt="Cocina de exposición en el showroom de Xaixo Home, con isla, mobiliario en tono topo y electrodomésticos integrados" loading="lazy">
+      <picture>
+        <source media="(min-width:901px)" srcset="/img/xaixohome-card.webp" width="900" height="950">
+        <img class="photo" src="/img/xaixohome.webp"
+          srcset="/img/xaixohome-480.webp 480w, /img/xaixohome-800.webp 800w, /img/xaixohome-1200.webp 1200w, /img/xaixohome-1600.webp 1600w, /img/xaixohome.webp 2688w"
+          sizes="100vw" width="2688" height="1520"
+          alt="Cocina de exposición en el showroom de Xaixo Home, con isla, mobiliario en tono topo y electrodomésticos integrados" loading="lazy">
+      </picture>
       <div class="ov">
         <span class="tag">NUESTRA EXPOSICIÓN</span>
         <h3>Xaixo Home</h3>
