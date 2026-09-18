@@ -8,9 +8,9 @@
     "generate:pages": "node scripts/generate-pages.mjs",
     "generate:assets": "node scripts/generate-assets.mjs",
     "generate:favicon": "node scripts/generate-favicon.mjs",
-    "predev": "npm run generate:pages",
+    "predev": "npm run generate:assets && npm run generate:pages",
     "dev": "vite",
-    "prebuild": "npm run generate:pages",
+    "prebuild": "npm run generate:assets && npm run generate:pages",
     "build": "vite build",
     "preview": "vite preview"
   },
